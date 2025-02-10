@@ -1,16 +1,16 @@
-/* button styling */
-.btn {
+  /* Style for the buttons (anchor tags styled as buttons) */
+  nav .btn {
     display: inline-block;
     padding: 10px 20px;
     background-color: #007bff;
-    color: #fff;
+    color: white;
     text-decoration: none;
     border-radius: 4px;
-    font-size: 1em;
-    margin: 0 5px;
+    margin: 0 10px; /* Space between each button */
+    transition: background-color 0.3s ease;
   }
   
-  .btn:hover {
+  nav .btn:hover {
     background-color: #0056b3;
   }
 
@@ -21,5 +21,51 @@
     background-repeat: no-repeat;   /* Prevents the image from repeating */
     background-position: center;    /* Centers the image */
     color: white;
+    min-height: 100vh;
+    margin: 0;
+}
+
+  /* Home page styling */
+        /* Center everything inside the header */
+header {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Title styling: large white text with purple glow */
+  .title {
+    font-size: 3em;
+    color: white;
+    /* Creates a purple glow effect */
+    text-shadow: 0 0 8px purple;
+    margin: 0;
+  }
+  
+  /* Home address styling: smaller font, white, centered under title */
+  .home-address {
+    font-size: 1.2em;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  /* Add some spacing between the home address and the navigation */
+  nav {
+    margin-top: 20px;
+  }
+
+  .footer {
+    position: fixed; /* Fixes the element relative to the viewport */
+    bottom: 0;       /* Positions it at the bottom */
+    right: 0;        /* Positions it on the right */
+    margin: 20px;    /* Adds some spacing from the edges */
+    color: white;    /* Ensures the text is visible (assuming your background is dark) */
+  }
+  
+  .hours {
+    position: fixed; /* Fix the element relative to the viewport */
+    bottom: 0;       /* Align to the bottom */
+    left: 0;         /* Align to the left */
+    margin: 20px;    /* Adds some space from the edges */
+    color: white;    /* Ensures the text is visible on a dark background */
   }
   
