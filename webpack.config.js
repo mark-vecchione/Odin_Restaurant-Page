@@ -9,10 +9,19 @@ module.exports = {
         path: path.resolve(__dirname, "dist"),
         clean: true,
     },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, "dist"),
+        },
+        port: 8080,
+        historyApiFallback: {
+            index: "/template.html",  // ✅ Serve template.html as the default file
+        },
+    },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/index.html",
-            filename: "index.html"
+            template: "./src/template.html",
+            filename: "template.html", // ✅ Generated file in dist
         }),
         new HtmlWebpackPlugin({
             template: "./src/menu.html",
@@ -27,7 +36,7 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/i,
-                use: ["style-loader","css-loader"],
+                use: ["style-loader", "css-loader"],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
