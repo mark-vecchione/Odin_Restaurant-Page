@@ -4,13 +4,12 @@ import "./styles.css";
 document.addEventListener("DOMContentLoaded", () => {
     const contentDiv = document.getElementById("content");
 
-    // Clear existing content before appending new elements
-    contentDiv.innerHTML = "";  
-
     const path = window.location.pathname;
 
-    // Homepage (index.html)
-    if (path.endsWith("index.html") || path === "/" || path === "") {
+    // ✅ Fix: Recognize root URL (`/`) as the homepage in Webpack
+    if (path.endsWith("template.html") || path === "/" || path === "/template") {
+         // Clear existing content before appending new elements
+        contentDiv.innerHTML = "";  
         appendHours(contentDiv);
         appendFooter(contentDiv);
     }
@@ -20,8 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Append Hours
 function appendHours(parentElement) {
-    // Prevent duplicate hours section
-    if (document.querySelector(".hours")) return;  // ✅ Ensures hours section is not appended twice
+    if (document.querySelector(".hours")) return;  
 
     const hoursDiv = document.createElement("div");
     hoursDiv.classList.add("hours");
@@ -56,8 +54,7 @@ function appendHours(parentElement) {
 
 // Append Footer
 function appendFooter(parentElement) {
-    // Prevent duplicate footer section
-    if (document.querySelector(".footer")) return;  // ✅ Ensures footer is not appended twice
+    if (document.querySelector(".footer")) return;  
 
     const footerDiv = document.createElement("div");
     footerDiv.classList.add("footer");
